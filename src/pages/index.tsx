@@ -3,6 +3,8 @@ import ReactQuill, { Quill } from "react-quill";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { EditorContentChanged } from "@/components/Editor";
+import ReactMarkdown from "react-markdown";
+import Viewer from "@/components/renderText";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +30,8 @@ export default function Home() {
       <div>
         <textarea defaultValue={editorMarkdownValue} />
       </div>
+
+      <Viewer value={editorMarkdownValue} />
     </>
   );
 }
